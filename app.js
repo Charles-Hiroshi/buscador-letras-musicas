@@ -6,6 +6,7 @@ const prevAndNextContainer = document.querySelector('#prev-and-next-container')
 const apiURL = `https://api.lyrics.ovh`
 
 // https://cors-anywhere.herokuapp.com/corsdemo
+// Caso tenha que usar
 
 const fetchData = async url => {
   const response = await fetch(url)
@@ -13,7 +14,10 @@ const fetchData = async url => {
 }
 
 const getMoreSongs = async url => {
-  const data = await fetchData(`https://cors-anywhere.herokuapp.com/${url}`)
+  //const data = await fetchData(`https://cors-anywhere.herokuapp.com/${url}`)
+  //Usando o cors temporário
+  const data = await fetchData(`${url}`)
+  //usando o CORS Unblock no Edge
   insertSongsIntoPage(data)
 }
 
